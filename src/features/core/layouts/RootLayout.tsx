@@ -9,9 +9,7 @@ export const RootLayout = ({ children }: RootLayoutProps) => {
   return (
     <>
       <AppBar />
-      <div className="flex py-3 px-6 text-black items-center justify-center">
-        {children}
-      </div>
+      <div className="flex pt-3 text-black items-center justify-center">{children}</div>
     </>
   );
 };
