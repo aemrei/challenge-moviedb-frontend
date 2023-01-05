@@ -34,7 +34,7 @@ export const PopularMoviesPage: React.FC<PopularMoviesPageProps> = ({
   }
 
   return (
-    <div className="flex flex-col gap-y-4 px-6 ">
+    <div>
       {resultSet && (
         <MovieList
           title="Popular Movies"

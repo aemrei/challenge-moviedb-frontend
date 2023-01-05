@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { PersonCard } from "../components/PersonCard";
 
 interface PersonListProps {
@@ -18,9 +17,7 @@ export const PersonList: React.FC<PersonListProps> = ({
       <ul className="flex flex-col gap-y-4">
         {people.map((person) => (
           <li key={person.id}>
-            <Link to={`/details/${person.id}`}>
-              <PersonCard person={person} assetUrl={assetUrl} />
-            </Link>
+            <PersonCard person={person} assetUrl={assetUrl} />
           </li>
         ))}
       </ul>

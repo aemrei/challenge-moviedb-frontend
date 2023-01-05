@@ -13,15 +13,17 @@ export const PersonCard: React.FC<PersonCardProps> = ({
 }) => {
   return (
     <div className={clsx("flex", className)} {...props}>
-      <div className="flex-shrink-0 z-10">
-        <img
-          className="h-60 rounded-lg overflow-hidden"
-          src={(assetUrl || "") + person.profile_path}
-          alt={person.name}
-        />
+      <div className="flex-shrink-0 z-10 h-60">
+        {person.profile_path && (
+          <img
+            className="h-60 rounded-lg overflow-hidden"
+            src={(assetUrl || "") + person.profile_path}
+            alt={person.name}
+          />
+        )}
       </div>
-      <div className="flex items-end -translate-x-3">
-        <div className="bg-white h-[85%] flex flex-col justify-between shadow-md rounded-lg p-3 pl-6">
+      <div className="flex items-end -translate-x-3 grow">
+        <div className="bg-white h-[85%] flex flex-col justify-between shadow-md rounded-lg p-3 pl-6 w-full">
           <h2 className="text-2xl font-semibold ">{person.name}</h2>
           <p className="line-clamp-3"></p>
         </div>

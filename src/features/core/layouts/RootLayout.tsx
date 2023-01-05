@@ -7,9 +7,9 @@ interface RootLayoutProps {
 
 export const RootLayout = ({ children }: RootLayoutProps) => {
   return (
-    <>
+    <div className="container max-w-3xl mx-auto">
       <AppBar />
       <div className="flex pt-3 text-black items-center justify-center">{children}</div>
-    </>
+    </div>
   );
 };

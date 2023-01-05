@@ -13,15 +13,17 @@ export const TvCard: React.FC<TvCardProps> = ({
 }) => {
   return (
     <div className={clsx("flex", className)} {...props}>
-      <div className="flex-shrink-0 z-10">
-        <img
-          className="h-60 rounded-lg overflow-hidden"
-          src={(assetUrl || "") + tv.poster_path}
-          alt={tv.name}
-        />
+      <div className="flex-shrink-0 z-10 h-60">
+        {tv.poster_path && (
+          <img
+            className="h-60 rounded-lg overflow-hidden"
+            src={(assetUrl || "") + tv.poster_path}
+            alt={tv.name}
+          />
+        )}
       </div>
-      <div className="flex items-end -translate-x-3">
-        <div className="bg-white h-[85%] flex flex-col justify-between shadow-md rounded-lg p-3 pl-6">
+      <div className="flex items-end -translate-x-3 grow">
+        <div className="bg-white h-[85%] flex flex-col justify-between shadow-md rounded-lg p-3 pl-6 w-full">
           <h2 className="text-2xl font-semibold ">{tv.name}</h2>
           <p className="line-clamp-3">{tv.overview}</p>
         </div>

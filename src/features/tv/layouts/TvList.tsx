@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { TvCard } from "../components/TvCard";
 
 interface TvListProps {
@@ -18,9 +17,7 @@ export const TvList: React.FC<TvListProps> = ({
       <ul className="flex flex-col gap-y-4">
         {tvs.map((tv) => (
           <li key={tv.id}>
-            <Link to={`/details/${tv.id}`}>
-              <TvCard tv={tv} assetUrl={assetUrl} />
-            </Link>
+            <TvCard tv={tv} assetUrl={assetUrl} />
           </li>
         ))}
       </ul>

@@ -9,10 +9,15 @@ const HomePage = () => {
   const dispatch = useAppDispatch();
   const updatePage = (page: number) => dispatch(setPage(page));
 
-  if (query) {
-    return <MultiSearchResultsPage page={page} setPage={updatePage} query={query} />;
-  }
-  return <PopularMoviesPage page={page} setPage={updatePage} />;
+  return (
+    <div className="flex flex-col gap-y-4 px-6 grow">
+      {query ? (
+        <MultiSearchResultsPage page={page} setPage={updatePage} query={query} />
+      ) : (
+        <PopularMoviesPage page={page} setPage={updatePage} />
+      )}
+    </div>
+  );
 };
 
 export default HomePage;

@@ -17,6 +17,7 @@ const searchSlice = createSlice({
     },
     setQuery: (state, action: PayloadAction<string>) => {
       state.query = action.payload;
+      state.page = 1;
     },
     setPage: (state, action: PayloadAction<number>) => {
       state.page = action.payload;
