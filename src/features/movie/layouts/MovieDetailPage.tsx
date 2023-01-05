@@ -55,8 +55,9 @@ export const MovieDetailPage = ({ id }: MovieDetailPageProps) => {
                 href={`https://www.youtube.com/watch?v=${video.key}`}
                 target="_blank"
                 rel="noreferrer"
+                key={video.id}
               >
-                <figure key={video.id} className="w-64">
+                <figure className="w-64">
                   <img
                     className="w-64 h-40 rounded-md shadow-md object-cover object-center"
                     src={`https://img.youtube.com/vi/${video.key}/0.jpg`}

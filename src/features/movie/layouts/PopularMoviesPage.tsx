@@ -1,8 +1,16 @@
+import { Pagination } from "src/features/core/components/Pagination";
 import { useGetPopularMoviesQuery } from "src/features/movie/store/movieService";
 import { MovieList } from "./MovieList";
 
-export const PopularMoviesPage: React.FC = () => {
-  const { data: resultSet, error, isLoading } = useGetPopularMoviesQuery();
+interface PopularMoviesPageProps {
+  page?: number;
+  setPage: (page: number) => void;
+}
+export const PopularMoviesPage: React.FC<PopularMoviesPageProps> = ({
+  page = 1,
+  setPage,
+}) => {
+  const { data: resultSet, error, isLoading } = useGetPopularMoviesQuery(page);
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -34,6 +42,11 @@ export const PopularMoviesPage: React.FC = () => {
           assetUrl={process.env.REACT_APP_ASSET_ROOT_URL}
         />
       )}
+      <Pagination
+        currentPage={page}
+        totalPages={resultSet?.total_pages || 1}
+        onPageChange={setPage}
+      />
     </div>
   );
 };
