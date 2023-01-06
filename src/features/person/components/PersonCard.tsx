@@ -11,7 +11,6 @@ export const PersonCard: React.FC<PersonCardProps> = ({
   className,
   ...props
 }) => {
-  console.log({ person });
   return (
     <div className={clsx("flex", className)} {...props}>
       <div className="flex-shrink-0 z-10 h-60">

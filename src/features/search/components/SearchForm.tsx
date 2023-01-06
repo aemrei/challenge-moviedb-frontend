@@ -38,8 +38,9 @@ export const SearchForm: React.FC<SearchFormProps> = ({
         {...register("search")}
       />
       {hasValue && (
-        <button type="reset" onClick={() => reset()}>
+        <button type="button" onClick={() => reset()}>
           <CloseIcon className="w-25 h-25 text-gray-500 " />
+          <span className="sr-only">Clear</span>
         </button>
       )}
       <button type="submit" className="sr-only">
