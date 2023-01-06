@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { SearchIcon } from "src/features/core/icons/SearchIcon";
+import { FaSearch as SearchIcon } from "react-icons/fa";
 
 interface SearchBoxProps extends React.HTMLAttributes<HTMLFormElement> {
   value: string;

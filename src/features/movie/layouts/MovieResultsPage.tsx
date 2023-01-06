@@ -28,6 +28,7 @@ export const MovieResultsPage: React.FC<MovieResultsPageProps> = ({
         currentPage={page}
         totalPages={data?.total_pages || 1}
         onPageChange={setPage}
+        className="my-4"
       />
     </div>
   );

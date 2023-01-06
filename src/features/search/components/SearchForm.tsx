@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { useForm } from "react-hook-form";
-import { CloseIcon } from "src/features/core/icons/CloseIcon";
-import { SearchIcon } from "src/features/core/icons/SearchIcon";
+import { AiOutlineCloseCircle as CloseIcon } from "react-icons/ai";
+import { FaSearch as SearchIcon } from "react-icons/fa";
 
 interface SearchFormProps extends React.HTMLAttributes<HTMLFormElement> {
   value: string;

@@ -28,6 +28,7 @@ export const PeopleResultsPage: React.FC<PeopleResultsPageProps> = ({
         currentPage={page}
         totalPages={data?.total_pages || 1}
         onPageChange={setPage}
+        className="my-4"
       />
     </div>
   );

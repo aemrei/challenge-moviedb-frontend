@@ -1,5 +1,8 @@
 import clsx from "clsx";
-import { StarIcon, StarOutlineIcon } from "src/features/core/icons/StarIcon";
+import {
+  AiFillStar as FillStarIcon,
+  AiOutlineStar as OutlineStarIcon,
+} from "react-icons/ai";
 
 interface RatingStarsProps {
   maxRating?: number;
@@ -18,9 +21,9 @@ export const RatingStars: React.FC<RatingStarsProps> = ({
     <div className={clsx("flex items-center", className)}>
       {stars.map((star) =>
         star <= Math.round(rating) ? (
-          <StarIcon key={star} className="w-5 h-5 text-yellow-500" />
+          <FillStarIcon key={star} className="w-5 h-5 text-yellow-500" />
         ) : (
-          <StarOutlineIcon key={star} className="w-5 h-5 text-yellow-500" />
+          <OutlineStarIcon key={star} className="w-5 h-5 text-yellow-500" />
         ),
       )}
     </div>

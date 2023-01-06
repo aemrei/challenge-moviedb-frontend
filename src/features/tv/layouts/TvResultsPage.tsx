@@ -28,6 +28,7 @@ export const TvResultsPage: React.FC<TvResultsPageProps> = ({
         currentPage={page}
         totalPages={data?.total_pages || 1}
         onPageChange={setPage}
+        className="my-4"
       />
     </div>
   );

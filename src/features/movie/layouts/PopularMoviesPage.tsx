@@ -46,6 +46,7 @@ export const PopularMoviesPage: React.FC<PopularMoviesPageProps> = ({
         currentPage={page}
         totalPages={resultSet?.total_pages || 1}
         onPageChange={setPage}
+        className="my-4"
       />
     </div>
   );

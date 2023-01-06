@@ -1,5 +1,6 @@
+import clsx from "clsx";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-interface PaginationProps {
+interface PaginationProps extends React.HTMLAttributes<HTMLDivElement> {
   currentPage: number;
   totalPages: number;
   maxVisiblePages?: number;
@@ -11,6 +12,8 @@ export const Pagination: React.FC<PaginationProps> = ({
   totalPages,
   maxVisiblePages = 5,
   onPageChange,
+  className,
+  ...props
 }) => {
   const startIndexDiff = Math.max(-Math.floor(maxVisiblePages / 2), 1 - currentPage);
   const pages = Array.from({ length: Math.min(totalPages, maxVisiblePages) }, (_, i) => {
@@ -18,7 +21,7 @@ export const Pagination: React.FC<PaginationProps> = ({
   });
 
   return (
-    <div className="flex items-center justify-center">
+    <nav className={clsx("flex items-center justify-center", className)} {...props}>
       <button
         className="w-10 h-10 flex items-center justify-center rounded-md bg-gray-200 hover:bg-gray-300"
         disabled={currentPage === 1}
@@ -51,6 +54,6 @@ export const Pagination: React.FC<PaginationProps> = ({
       >
         <FaChevronRight className="w-5 h-5 text-gray-700" />
       </button>
-    </div>
+    </nav>
   );
 };
