@@ -1,6 +1,7 @@
 import { RatingStars } from "src/features/core/components/RatingStars";
 import { ContentSection } from "../components/ContentSection";
 import { useGetMovieQuery } from "../store/movieService";
+import { FaChevronLeft as LeftIcon } from "react-icons/fa";
 
 interface MovieDetailPageProps {
   id: string;
@@ -35,6 +36,16 @@ export const MovieDetailPage = ({ id }: MovieDetailPageProps) => {
 
   return (
     <div className="flex flex-col w-screen">
+      {/* back button */}
+      <div className="fixed top-0 left-0 m-4">
+        <button
+          className="flex bg-white rounded-full shadow-md p-2"
+          onClick={() => window.history.back()}
+        >
+          <LeftIcon className="w-6 h-6" />
+        </button>
+      </div>
+
       <div className="flex flex-col items-center m-2 space-y-3">
         <img
           className="h-60 rounded-lg overflow-hidden"
