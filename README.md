@@ -1,46 +1,69 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple app that uses [The Movie Database](https://www.themoviedb.org/) API to search for movies and shows.
 
-## Available Scripts
+You need an API key from [The Movie Database](https://www.themoviedb.org/). Create a file called `.env.local` in the root of the project and add the following line:
 
-In the project directory, you can run:
+```env
+REACT_APP_API_KEY=eyJ...your key here
+```
 
-### `yarn start`
+Then you can run the app in development mode:
 
-Runs the app in the development mode.\
+```sh
+yarn start
+```
+
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Screenshots
 
-### `yarn test`
+![Details](./docs/DetailPage.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Search](./docs/SearchPage.png)
 
-### `yarn build`
+![Popular](./docs/PopularMovies.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Paging](./docs/Paging.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Storybook](./docs/Storybook.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Docker
 
-### `yarn eject`
+There is a Dockerfile included in the project. You can build the image and run the container with the following commands:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```sh
+docker build -t themoviedb .
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## You can also use the .env.local file to set the API key
+docker run --name themoviedb --env-file ./.env.local -it -p 3000:80 themoviedb
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Tests
 
-## Learn More
+There is a test suite included in the project. You can run the tests with the following command:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```sh
+yarn test
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Also, there is a storybook included in the project. You can run the storybook with the following command:
+
+```sh
+yarn storybook
+```
+
+## Used technologies
+
+- [React](https://reactjs.org/)
+- [React Router](https://reactrouter.com/)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+- [Storybook](https://storybook.js.org/)
+- [Docker](https://www.docker.com/)
+- [Husky](https://typicode.github.io/husky/#/)
+- [Commitlint](https://commitlint.js.org/#/)
+- [Prettier](https://prettier.io/)
