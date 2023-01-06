@@ -1,4 +1,5 @@
 import { Pagination } from "src/features/core/components/Pagination";
+import { Spinner } from "src/features/core/components/Spinner";
 import { MovieList } from "src/features/movie/layouts/MovieList";
 import { useGetMoviesSearchQuery } from "src/features/movie/store/movieService";
 
@@ -18,7 +19,11 @@ export const MovieResultsPage: React.FC<MovieResultsPageProps> = ({
   const { data, isLoading } = useGetMoviesSearchQuery({ query, page });
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="flex justify-center">
+        <Spinner />
+      </div>
+    );
   }
 
   return (

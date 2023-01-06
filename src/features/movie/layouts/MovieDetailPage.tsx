@@ -2,6 +2,7 @@ import { RatingStars } from "src/features/core/components/RatingStars";
 import { ContentSection } from "../components/ContentSection";
 import { useGetMovieQuery } from "../store/movieService";
 import { FaChevronLeft as LeftIcon } from "react-icons/fa";
+import { Spinner } from "src/features/core/components/Spinner";
 
 interface MovieDetailPageProps {
   id: string;
@@ -11,7 +12,11 @@ export const MovieDetailPage = ({ id }: MovieDetailPageProps) => {
   const assetUrl = process.env.REACT_APP_ASSET_ROOT_URL;
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="flex justify-center">
+        <Spinner />
+      </div>
+    );
   }
 
   if (error) {

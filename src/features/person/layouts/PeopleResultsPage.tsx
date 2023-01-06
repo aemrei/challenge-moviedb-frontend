@@ -1,4 +1,5 @@
 import { Pagination } from "src/features/core/components/Pagination";
+import { Spinner } from "src/features/core/components/Spinner";
 import { PersonList } from "src/features/person/layouts/PersonList";
 import { useGetPeopleSearchQuery } from "src/features/person/store/personService";
 
@@ -18,7 +19,11 @@ export const PeopleResultsPage: React.FC<PeopleResultsPageProps> = ({
   const { data, isLoading } = useGetPeopleSearchQuery({ query, page });
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="flex justify-center">
+        <Spinner />
+      </div>
+    );
   }
 
   return (

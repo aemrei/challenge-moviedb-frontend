@@ -1,4 +1,5 @@
 import { Pagination } from "src/features/core/components/Pagination";
+import { Spinner } from "src/features/core/components/Spinner";
 import { useGetPopularMoviesQuery } from "src/features/movie/store/movieService";
 import { MovieList } from "./MovieList";
 
@@ -13,7 +14,11 @@ export const PopularMoviesPage: React.FC<PopularMoviesPageProps> = ({
   const { data: resultSet, error, isLoading } = useGetPopularMoviesQuery(page);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="flex justify-center">
+        <Spinner />
+      </div>
+    );
   }
 
   if (error) {

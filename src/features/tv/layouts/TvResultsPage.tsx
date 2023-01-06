@@ -1,4 +1,5 @@
 import { Pagination } from "src/features/core/components/Pagination";
+import { Spinner } from "src/features/core/components/Spinner";
 import { TvList } from "../layouts/TvList";
 import { useGetTvSearchQuery } from "../store/tvService";
 
@@ -18,7 +19,11 @@ export const TvResultsPage: React.FC<TvResultsPageProps> = ({
   const { data, isLoading } = useGetTvSearchQuery({ query, page });
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="flex justify-center">
+        <Spinner />
+      </div>
+    );
   }
 
   return (
