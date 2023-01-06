@@ -40,7 +40,7 @@ export const MovieDetailPage = ({ id }: MovieDetailPageProps) => {
   }
 
   return (
-    <div className="flex flex-col w-screen">
+    <div className="flex flex-col w-full">
       {/* back button */}
       <div className="fixed top-0 left-0 m-4">
         <button
